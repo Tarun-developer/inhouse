@@ -1,0 +1,432 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"card",
+				"card-stats"
+			],
+			[
+				"da",
+				"daily_status"
+			],
+			[
+				"all_",
+				"all_clients"
+			],
+			[
+				"run",
+				"running"
+			],
+			[
+				"com",
+				"completed_count"
+			],
+			[
+				"cro",
+				"crossed_dead_count"
+			],
+			[
+				"in",
+				"index"
+			],
+			[
+				"mile",
+				"milestone_days"
+			],
+			[
+				"mil",
+				"milestone_days"
+			],
+			[
+				"pro",
+				"project_save"
+			],
+			[
+				"get",
+				"getlist"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"prin",
+				"print_r"
+			],
+			[
+				"cl",
+				"clear_button"
+			],
+			[
+				"clea",
+				"clear_button"
+			],
+			[
+				"add",
+				"add_date"
+			],
+			[
+				"add_",
+				"add_name_project"
+			],
+			[
+				"ad",
+				"add_teams"
+			],
+			[
+				"al",
+				"all_tech"
+			],
+			[
+				"show",
+				"show_teams"
+			],
+			[
+				"sele",
+				"selectpicker"
+			],
+			[
+				"A",
+				"AllProjects"
+			],
+			[
+				"team",
+				"team_lead"
+			],
+			[
+				"Team",
+				"TeamLeadCredentials"
+			],
+			[
+				"data",
+				"database_string"
+			],
+			[
+				"for",
+				"forget_obj"
+			],
+			[
+				"Ex",
+				"Exception"
+			],
+			[
+				"pass",
+				"password1"
+			],
+			[
+				"red",
+				"redirect"
+			],
+			[
+				"de",
+				"deadline_time"
+			],
+			[
+				"user",
+				"user_id"
+			],
+			[
+				"Main",
+				"MainAdminCredentials"
+			],
+			[
+				"del",
+				"del_prev_mails"
+			],
+			[
+				"Mai",
+				"MainAdminCredentials"
+			],
+			[
+				"mail",
+				"mail_id"
+			],
+			[
+				"text-a",
+				"text-align"
+			],
+			[
+				"fin",
+				"find_element_by_id"
+			],
+			[
+				"clic",
+				"clickable"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/ip-d/Documents/rental/rental/settings.py",
+		"/home/ip-d/Documents/rental/search/views.py",
+		"/home/ip-d/Documents/rental/rental/wsgi.py",
+		"/home/ip-d/Documents/rental/search/urls.py",
+		"/home/ip-d/Documents/rental/owner/urls.py",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/projects_client/urls.py",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/projects_client/views.py",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/esfera_dashboard/settings.py",
+		"/home/ip-d/Documents/rental/rental/urls.py",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/mainadmin/urls.py",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/mainadmin/views.py",
+		"/home/ip-d/Documents/extension/manifest.json",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/projects_client/templates/running.html",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/projects_client/templates/projects.html",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/projects_client/static/js/projects.js",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/projects_client/admin.py",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/esfera_dashboard/info.txt",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/esfera_dashboard/urls.py",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/projects_client/models.py",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/projects_client/templates/dashboard.html",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/projects_client/templates/add_project.html",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/projects_client/templates/projects_base.html",
+		"/home/ip-d/Desktop/match.txt",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/projects_client/static/img/event_add-icon.png",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/projects_client/static/css/projects.css",
+		"/home/ip-d/Documents/office_status/gmail.py",
+		"/home/ip-d/Documents/tinder/tinder.py",
+		"/etc/php/7.0/cli/php.ini",
+		"/var/www/html/request.php",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/login/models.py",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/login/admin.py",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/login/static/js/admin_login.js",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/login/templates/login_base.html",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/login/views.py",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/login/static/login_css/login_style.css",
+		"/tmp/fz3temp-1/views.py",
+		"/tmp/fz3temp-1/dashboard.css",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/login/templates/admin_login.html",
+		"/tmp/fz3temp-1/all_media_partner.js",
+		"/tmp/fz3temp-1/add_edit_deal.html",
+		"/tmp/fz3temp-1/assign_activity.html",
+		"/tmp/fz3temp-1/models.py",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/projects_client/apps.py",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/projects_client/templates/user.html",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/login/templates/reset_emp.html",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/login/urls.py",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/mainadmin/templates/dashboard.html",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/login/static/js/team_login.js",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/login/templates/reset_tl.html",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/login/static/js/employee_login.js",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/login/templates/team_login.html",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/login/templates/team_login.htm",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/login/templates/employee_login.html",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/login/templates/reset_main_admin.html",
+		"/home/ip-d/Documents/esfera-admin/working/esfera_dashboard/login/templates/employe_login.html",
+		"/tmp/fz3temp-1/admin_base.html",
+		"/tmp/fz3temp-1/activity_dashboard.html",
+		"/tmp/fz3temp-1/billing_info.html",
+		"/tmp/fz3temp-1/urls 2.py",
+		"/tmp/fz3temp-1/urls.py",
+		"/tmp/fz3temp-1/activity.js",
+		"/tmp/fz3temp-1/views 2.py",
+		"/home/ip-d/Documents/esfera-admin/esfera_dashboard/login/models.py",
+		"/home/ip-d/Documents/esfera-admin/esfera_dashboard/login/urls.py",
+		"/home/ip-d/Documents/esfera-admin/esfera_dashboard/login/views.py",
+		"/home/ip-d/Documents/esfera-admin/esfera_dashboard/login/admin.py",
+		"/home/ip-d/Documents/esfera-admin/esfera_dashboard/projects_client/models.py",
+		"/home/ip-d/Documents/esfera-admin/esfera_dashboard/mainadmin/models.py",
+		"/home/ip-d/Documents/esfera-admin/esfera_dashboard/esfera_dashboard/urls.py",
+		"/home/ip-d/Documents/esfera-admin/esfera_dashboard/login/static/js/admin_login.js",
+		"/home/ip-d/Documents/esfera-admin/esfera_dashboard/login/templates/admin_login.html",
+		"/home/ip-d/Documents/esfera-admin/esfera_dashboard/login/static/login_css/login_style.css",
+		"/home/ip-d/Documents/esfera-admin/esfera_dashboard/requirements.txt",
+		"/tmp/fz3temp-1/settings.py",
+		"/home/ip-d/Documents/game/ball-rolling/\"/home/ip-d/Documents/game/ball-rolling/Assets/ballcontrol.cs\"",
+		"/home/ip-d/Documents/Tkinter/animate_image.py",
+		"/home/ip-d/Desktop/test.py",
+		"/home/ip-d/Documents/game/New Unity Project/\"/home/ip-d/Documents/game/New Unity Project/Assets/BallControl.cs\"",
+		"/home/ip-d/Desktop/cover+letter/Untitled Document",
+		"/home/ip-d/Documents/game/New Unity Project/Assets/BallControl.cs",
+		"/home/ip-d/Documents/wordpress-scrap/sher.py",
+		"/home/ip-d/Downloads/monodevelop.flatpakref",
+		"/home/ip-d/Documents/game/New Unity Project/first.unity",
+		"/home/ip-d/Documents/game/New Unity Project/Assets/living birds/animations/bird@hopBack.FBX",
+		"/home/ip-d/Documents/game/New Unity Project/Assets/Models/prop_asteroid_03.FBX",
+		"/home/ip-d/Documents/udemy_script/a.txtd",
+		"/home/ip-d/Documents/tinder/tinder.spec",
+		"/home/ip-d/Documents/esfera-admin/esfera_dashboard/gtt.txt"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"add_client_name",
+			"utils.js",
+			"googleap",
+			"key",
+			"card",
+			"fsss",
+			"src",
+			"AddProject",
+			"curl",
+			"date",
+			"error",
+			"css",
+			"chart",
+			"chars",
+			"ForgetEmployee",
+			"deal",
+			"loading",
+			"toast",
+			"messages",
+			"Email",
+			"passw",
+			"base",
+			"mail",
+			"mainadminemail",
+			"c",
+			"email",
+			"AdminLogin"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "manage.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 151.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
