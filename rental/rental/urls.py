@@ -11,6 +11,8 @@ urlpatterns = [
     url(r'^siteadmin/', admin.site.urls),
     url(r'^dashboard/', include('search.urls')),
     url(r'^owner/',include('owner.urls')),
+    url(r'^scrap/',include('scrap.urls')),
+    
     # url(r'^', include('login.urls')),
 ]
 

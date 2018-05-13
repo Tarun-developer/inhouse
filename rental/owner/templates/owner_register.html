@@ -1,0 +1,29 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <link href="{% static '/css/register.css' %} " rel="stylesheet" />
+    </head>
+    <body>
+        <form action="/owner/owner_register" method="POST">
+            {% csrf_token %}
+            <div id="login-box">
+                <div class="left">
+                    <h1>Sign up</h1>
+                    <input type="text" name="moblie" placeholder="Mobile Number" />
+                    <input type="text" name="email" placeholder="E-mail" />
+                    <input type="password" name="password" placeholder="Password" />
+                    <input type="submit" name="signup_submit" value="Sign me up" />
+                </div>
+
+                <div class="right">
+                    <span class="loginwith">Sign in with<br />social network</span>
+
+                    <button class="social-signin facebook">Log in with facebook</button>
+                    <button class="social-signin google">Log in with Google+</button>
+                </div>
+                <div class="or">OR</div>
+            </div>
+        </form>
+    </body>
+</html>

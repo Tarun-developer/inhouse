@@ -9,8 +9,8 @@ from django.db import models
 # Create your models here.
 
 class Furnish(models.Model):
-	fully = models.IntegerField(blank=True,null=True)
-	partially= models.IntegerField(blank=True,null=True)
+	fully = models.IntegerField(blank=True,null=True,default=0)
+	partially= models.IntegerField(blank=True,null=True,default=0)
 	
 	def __str__(self):
 		return str(self.id)
@@ -18,44 +18,44 @@ class Furnish(models.Model):
 
 
 class Apartment(models.Model):
-	apartment = models.IntegerField(blank=True,null=True)
-	pg = models.IntegerField(blank=True,null=True)
-	room=models.IntegerField(blank=True,null=True)
-	
+	name=models.CharField(max_length=500,null=True,blank=True)
 	def __str__(self):
 		return str(self.id)
 
 
 
 class BHK(models.Model):
-	one = models.IntegerField(blank=True,null=True)
-	two = models.IntegerField(blank=True,null=True)
-	three=models.IntegerField(blank=True,null=True)
-	
+	name=models.CharField(max_length=500,null=True,blank=True)
 	def __str__(self):
 		return str(self.id)
 
-
+class Images(models.Model):
+	name=models.CharField(max_length=500,null=True,blank=True)
+	def __str__(self):
+		return str(self.name)
 
 class Property(models.Model):
+	name=models.CharField(max_length=500)
 	location = models.CharField(max_length=1000)	
 	status = models.IntegerField(blank=True,null=True,default=1)
 	created_at = models.DateField(blank=True,null=True)
-	budget=models.IntegerField(blank=True,null=True)
+	budget=models.CharField(blank=True,null=True,max_length=500)
 	apartment=models.ForeignKey(Apartment,on_delete=models.CASCADE,blank=True,null=True)
 	furnish=models.ForeignKey(Furnish,on_delete=models.CASCADE,blank=True,null=True)
 	bhk=models.ForeignKey(BHK,on_delete=models.CASCADE,blank=True,null=True)
 	family_preferrable=models.IntegerField(blank=True,null=True)
+	image=models.ForeignKey(Images,on_delete=models.CASCADE,blank=True,null=True)
 		
 	def __str__(self):
-		return str(self.location)
+		return str(str(self.name)+'  '+str(self.location))
 
 
 
 class OwnerInfo(models.Model):
-	name = models.CharField(max_length = 250)
-	mobile = models.DateField()
-	email = models.DateField()
+	name = models.CharField(max_length = 100)
+	password = models.CharField(max_length = 200)
+	mobile = models.CharField(max_length = 10)
+	email = models.CharField(max_length = 100)
 	propertie=models.ForeignKey(Property,on_delete=models.CASCADE)
 
 	def __str__(self):

@@ -23,4 +23,4 @@ admin.site.register(Property,PropertySearch)
 admin.site.register(OwnerInfo,OwnerSearch)
 admin.site.register(Client,ClientSearch)
 admin.site.register(ClientReivew)
-
+admin.site.register(Images)

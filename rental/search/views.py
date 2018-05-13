@@ -18,6 +18,8 @@ import pytz
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect, HttpResponseRedirect, render_to_response
 from django.contrib import messages
+from django.contrib.gis import geoip
+from django.contrib.gis.geoip import GeoIP
 # from login.models import *
 utc=pytz.UTC
 
@@ -32,26 +34,21 @@ class HomePage(TemplateView):
 
 	def get_context_data(self, *args, **kwargs):
 		context = super(HomePage, self).get_context_data()
+		self.request.environ['REMOTE_ADDR']
+		if  self.request.environ['REMOTE_ADDR'] == '127.0.0.1':
+			context['ip']='157.39.138.172'
+		else:
+			context['ip']=self.request.environ['REMOTE_ADDR']
+		g = GeoIP()
+		location_data = g.city(context['ip'])
+		# city = g.city('106.192.73.120')
+		context['city']= location_data['city']
+		context['country']= location_data['country_name']
 		
-		# Running count
-		# running_count=Projects.objects.filter(status=0).count()
-		# context['running_count']=running_count
-
-		# # Completed count
-		# completed_count=Projects.objects.filter(status=1).count()
-		# context['completed_count']=completed_count
-
-		# # Crossed deadline
-
-		# crossed_dead_count=Projects.objects.filter(deadline__lte=datetime.now() + timedelta(days=0),status=0).count()
-		# context['cross_deal_count']=crossed_dead_count
-
-		# # Total Projects
-		# total_proj_count=Projects.objects.count()
-		# context['total_proj_count']=total_proj_count
 		return context
+	
 	def post(self,request):
-
+		print (request.POST)
 		response={}
 		email_id=request.POST.get('email')
 		input_password=request.POST.get('passw')
@@ -75,5 +72,4 @@ class HomePage(TemplateView):
 				print ('wrong')
 				response['password_error']='Wrong Password'
 				return HttpResponse(json.dumps(response))
-
 
