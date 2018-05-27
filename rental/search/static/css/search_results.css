@@ -1,0 +1,19 @@
+body {
+  padding-top: 2rem;
+}
+.h5, h5 {
+    font-size: 1rem;
+}
+img.pro_image {
+    width: 179px;
+}
+.alert.alert-success.alert-dismissable {
+    display: none;
+}
+img.img-thumbnail.pro_image {
+    height: 85px;
+    width: 100px;
+}
+.col-md-4.image_prop {
+    max-height: 136px;
+}

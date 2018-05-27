@@ -8,7 +8,6 @@ urlpatterns = [
     url(r'^owner_profile',OwnerProfile.as_view(),name='owner_profile'),
     url(r'^owner_property',OwnerProperty.as_view(),name='owner_property'),
     url(r'^owner_register',OwnerRegister.as_view(),name='owner_register'),
-    url(r'^owner_login',OwnerLogin.as_view(),name='owner_login'),
     url(r'^owner_add_property',OwnerAddProperty.as_view(),name='owner_add_property'),
 
 

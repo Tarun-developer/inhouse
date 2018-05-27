@@ -45,6 +45,10 @@ class Property(models.Model):
 	bhk=models.ForeignKey(BHK,on_delete=models.CASCADE,blank=True,null=True)
 	family_preferrable=models.IntegerField(blank=True,null=True)
 	image=models.ForeignKey(Images,on_delete=models.CASCADE,blank=True,null=True)
+	lat=models.FloatField(blank=True,null=True)
+	lng=models.FloatField(blank=True,null=True)
+
+
 		
 	def __str__(self):
 		return str(str(self.name)+'  '+str(self.location))
@@ -53,13 +57,13 @@ class Property(models.Model):
 
 class OwnerInfo(models.Model):
 	name = models.CharField(max_length = 100)
-	password = models.CharField(max_length = 200)
-	mobile = models.CharField(max_length = 10)
+	owner_password = models.CharField(max_length = 200)
+	owner_mobile = models.CharField(max_length = 10)
 	email = models.CharField(max_length = 100)
-	propertie=models.ForeignKey(Property,on_delete=models.CASCADE)
+	propertie=models.ForeignKey(Property,on_delete=models.CASCADE,blank=True,null=True)
 
 	def __str__(self):
-		return str(self.name)
+		return str(self.owner_mobile)
 
 
 

@@ -87,8 +87,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'rental',
-        'USER': 'root',
-        'PASSWORD': 'esfera',
+        'USER': 'admin',
+        'PASSWORD': 'M4ster@809',
         'HOST': 'localhost',
         'PORT': '',
     }
@@ -151,4 +151,5 @@ STATICFILE_DIR=(os.path.join(BASE_DIR, 'static/'))
 MEDIA_URL = '/media/'
 # MEDIA_ROOT = '/home/ip-d/Documents/parul/projects/Max7p/max7p/media'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-CHROMEDRIVER_PATH='/home/ip-d/Documents/tinder/chromedriver'
+CHROMEDRIVER_PATH='/home/tarun/Documents/inhouse/rental/chromedriver'
+GEOIP_PATH ='GeoLiteCity.dat'
