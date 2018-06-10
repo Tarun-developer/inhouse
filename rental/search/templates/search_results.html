@@ -9,6 +9,11 @@
       <link href="{% static '/css/search/bootstrap.min.css' %}" rel="stylesheet">
       <link href="{% static '/css/search/selectric.css' %}" rel="stylesheet">
       <link href="{% static '/css/search/style.css' %}" rel="stylesheet">
+      <link href="{% static '/css/search_results.css' %}" rel="stylesheet">
+      <link href="{% static '/css/5star.css' %}" rel="stylesheet">
+      <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+
       <script language="JavaScript" type="text/javascript" src="{% static '/js/search/jquery.min.js' %}"></script>
     <script language="JavaScript" type="text/javascript" src="{% static '/js/search/bootstrap.min.js' %}"></script>
        <script language="JavaScript" type="text/javascript" src="{% static '/js/search/jquery.sidr.min.js' %}"></script>
@@ -49,7 +54,7 @@
                   <ul class="navbar-nav ml-auto">
                      <li class="nav-item dropdown user-account">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> Hi, Tarun</a>
-                        <div class="dropdown-menu"> <a href="my_profile.html" class="dropdown-item">My Profile</a>
+                        <div class="dropdown-menu"> <a href="/owner/" class="dropdown-item">My Profile</a>
                            <a href="my_password.html" class="dropdown-item">Change Password</a>
                            <a href="my_notifications.html" class="dropdown-item">Notifications</a>
                            <a href="my_membership.html" class="dropdown-item">Membership</a>
@@ -57,7 +62,7 @@
                            <a href="my_account.html" class="dropdown-item">Account</a>
                         </div>
                      </li>
-                     <li class="nav-item"><a class="nav-link nav-btn" href="my_listing_add.html"><span><i class="fa fa-plus" aria-hidden="true"></i> Add listing</span></a>
+                     <li class="nav-item"><a class="nav-link nav-btn" href="/owner/owner_add_property"><span><i class="fa fa-plus" aria-hidden="true"></i> Add listing</span></a>
                      </li>
                   </ul>
                </div>
@@ -70,19 +75,30 @@
                      <div class="col-lg-8">
                         <div class="form-group">
                            {% csrf_token %}
-                           <input type="text" id="pac-input" value="{{ search_result }}" class="form-control form-control-lg" placeholder="eg.Mohali">
+                        <input type="hidden" id="search_value" name="search_value" value="{{ search_result }}"> 
+                           <input type="text" id="pac-input" value="" class="form-control form-control-lg" required placeholder="eg.Mohali">
                         </div>
                      </div>
                      <div class="col-lg-4">
                         <div class="row">
                            <div class="form-group">
-                              <button type="button" id="search" name="search" class="btn btn-lg btn-primary btn-block">Search</button>
+                              <button type="button"  id="search" name="search" class="btn btn-lg btn-primary btn-block">Search</button>
                            </div>
                         </div>
                      </div>
                   </div>
                </div>
             </div>
+                                  <div id="loader">
+<div id="shadow" class="loadershadow"></div>
+  <div id="box" class="loader_box"></div>
+</div>
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
          </div>
          <div class="container">
             <div class="row justify-content-md-center">
@@ -94,8 +110,10 @@
                </div>
             </div>
          </div>
+  
          <div id="content">
             <div class="container">
+
                <div class="row justify-content-md-center">
                   <div class="col col-lg-12 col-xl-10">
                      <div class="row has-sidebar">
@@ -307,12 +325,12 @@
                  });});
       </script>
       <script id="proerity_script" type="text/templet">
-         <div class="clone_html_properity">
+         <div class="clone_html_properity ">
            <div class="row">
              <div class="col-lg-5">
                <div class="item-image ">
                  <a href="property_single.html">
-                   <img src="https://commons.wikimedia.org/wiki/File:No_image_available.png" class="pro_image img-fluid" alt="">
+                   <img src="{% static '/images/no_image.jpg' %}" class="pro_image img-fluid" alt="">
                    <div class="item-badges">
                      <div class="item-badge-left ">Soon</div>
                      <div class="item-badge-right">For Rent</div>
@@ -328,13 +346,10 @@
                <div class="item-info">
                  <h3 class="item-title property_title"><a href="property_single.html"></a></h3><i class="fa fa-map-marker">
                  <div class="item-location location"></i></div><span class="distance"> </span>
-                 <div class="item-details-i"> <span class="bedrooms" data-toggle="tooltip" title="3 Bedrooms">3 <i class="fa fa-bed"></i></span>  <span class="bathrooms" data-toggle="tooltip" title="2 Bathrooms">2 <i class="fa fa-bath"></i></span> 
-                 </div>
+              
                  <div class="item-details">
                    <ul>
-                     <li>Sq Ft <span>730-2600</span>
-                     </li>
-                     <li>Type <span>Apartments</span>
+                     <li>Furnished
                      </li>
                    </ul>
                  </div>
@@ -343,12 +358,30 @@
                  <div class="col-md-6">
                    <div class="added-on">Listed on 19th Feb 2017</div>
                  </div>
-                 <div class="col-md-6"> <a href="#" class="added-by">by John Doe</a>
+                 <div class="col-md-6"> <a href="#" class="added-by">by Unnamed Owner</a>
+      
                  </div>
                </div>
              </div>
+
+  <div class="stars">
+    <form action="">
+      <input class="star star-5" id="star-5-2" type="radio" name="star"/>
+      <label class="star star-5" for="star-5-2"></label>
+      <input class="star star-4" id="star-4-2" type="radio" name="star"/>
+      <label class="star star-4" for="star-4-2"></label>
+      <input class="star star-3" id="star-3-2" type="radio" name="star"/>
+      <label class="star star-3" for="star-3-2"></label>
+      <input class="star star-2" id="star-2-2" type="radio" name="star"/>
+      <label class="star star-2" for="star-2-2"></label>
+      <input class="star star-1" id="star-1-2" type="radio" name="star"/>
+      <label class="star star-1" for="star-1-2"></label>
+    </form>
+  </div>
            </div>
+
          </div>
       </script>
+
    </body>
 </html>

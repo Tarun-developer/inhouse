@@ -33,7 +33,7 @@
                 <!-- <input type="text" id="search_input" name="search" class="form-control" required> -->
                 <!--          <input id="autocomplete" placeholder="Enter your address"
 onFocus="geolocate()" type="text"></input> -->
-                <input id="pac-input" class="controls form-control search_input" type="text" placeholder="Search Box" name="search">
+                <input id="pac-input" class="controls form-control search_input" type="text" placeholder="Search Box" autofocus required maxlength="50" name="search">
                 <!-- <div id="map"></div> -->
                 <input id="ip_location" type="hidden" value="{{ city }} {{ country }}">
                 <span class="input-group-btn">
@@ -51,7 +51,7 @@ onFocus="geolocate()" type="text"></input> -->
               </button>
             </div>
             <div class="btn-group">
-              <button type="button" class="btn btn-primary" id="feeling-lucky">I'm Owner
+              <button type="button" class="btn btn-primary" onclick="window.open('/owner/owner_register')" id="feeling-lucky">I'm Owner
               </button>
             </div>
           </div>

@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from search.models import OwnerInfo
+from search.models import Property
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
 from django.contrib import messages
@@ -86,13 +87,27 @@ class OwnerAddProperty(TemplateView):
         context = super(OwnerAddProperty, self).get_context_data()
         return context
     def post(self, request):
-        form=request.POST.get('form_data')
-        print form
-        # pprint.pprint(splitresult)
-        # for i in splitresult:
-        #     print i
+        try:
+            property_type = request.POST.get('property_type')
+            property_status = request.POST.get('property_status')
+            loaction = request.POST.get('loaction')
+            price = request.POST.get('price')
+            city = request.POST.get('city')
+            family = request.POST.get('family')
+            bachelor = request.POST.get('bachelor')
+            girls = request.POST.get('girls')
+            if property_status=='Furnished':
+                furn_obj=Furnish.objects.create(fully=1)
+            if property_status=='Semi Furnished':
+                furn_obj=Furnish.objects.create(partially=1)
+            if property_status=='Unfurnished':
+                furn_obj=Furnish.objects.create(unfurnished=1)
 
-        # new_property=Property.objects.create(name=lis['title'],location=lis['location'],status=1,budget=str(lis['price']),furnish=furn_obj)
+                new_property=Property.objects.create(name=str(property_type) +str(" - ")++ str(property_status) ,location=loaction,status=1,budget=price,furnish=furn_obj)
+                print new_property.id
+        except Exception as rr:
+                print (rr)
 
+        # return HttpResponseRedirect("/owner/owner_property")
 
 	

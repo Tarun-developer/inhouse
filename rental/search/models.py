@@ -11,6 +11,8 @@ from django.db import models
 class Furnish(models.Model):
 	fully = models.IntegerField(blank=True,null=True,default=0)
 	partially= models.IntegerField(blank=True,null=True,default=0)
+	unfurnished= models.IntegerField(blank=True,null=True,default=0)
+
 	
 	def __str__(self):
 		return str(self.id)
