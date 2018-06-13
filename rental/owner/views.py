@@ -1,15 +1,21 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from search.models import OwnerInfo
-from search.models import Property
+from search.models import *
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
 from django.contrib import messages
 import json,pprint
 from django.core import serializers
 from django.contrib.auth.hashers import make_password, check_password
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
+from django.utils import timezone
+import googlemaps
+gmaps = googlemaps.Client(key='AIzaSyCn4KrK85eV6WY_E9KC460feVjSukKlLsw')
+
 
 
 # Create your views here.
@@ -53,6 +59,12 @@ class OwnerRegister(TemplateView):
                 bool_pass=check_password(password,owner_obj.owner_password)
                 
                 if bool_pass:
+                    user = authenticate(owner_mobile=mobile, owner_password=password)
+                    print user
+                    if user is not None:
+                        if user.is_active:
+                            request.session.set_expiry(86400) #sets the exp. value of the session
+                            login(request, user) #the user is now logged in
                     # login successfully, to do create session
                     return HttpResponseRedirect("/owner/")
                 else:
@@ -83,31 +95,42 @@ class OwnerRegister(TemplateView):
 class OwnerAddProperty(TemplateView):
     template_name = "owner_add_property.html"
 
+    
     def get_context_data(self, * args, ** kwargs):
         context = super(OwnerAddProperty, self).get_context_data()
         return context
     def post(self, request):
+
         try:
             property_type = request.POST.get('property_type')
             property_status = request.POST.get('property_status')
             loaction = request.POST.get('loaction')
             price = request.POST.get('price')
             city = request.POST.get('city')
-            family = request.POST.get('family')
+            family = request.POST.getlist('checks[]')
+            print family
+            # if family[0]==1:
+            #     pref_obj=Preference.objects.create(family=1,girls=1,bachelor=1)
+            # if family[0]==2:
+            #     pref_obj=Preference.objects.create(family=1,girls=1,bachelor=1)
+            #     if family=='3':
+            #         pref_obj=Preference.objects.create(bachelor=1)
             bachelor = request.POST.get('bachelor')
             girls = request.POST.get('girls')
+            result_add_query = gmaps.places(loaction)
+            lat=result_add_query['results'][0]['geometry']['location']['lat']
+            lng=result_add_query['results'][0]['geometry']['location']['lng']
             if property_status=='Furnished':
                 furn_obj=Furnish.objects.create(fully=1)
             if property_status=='Semi Furnished':
                 furn_obj=Furnish.objects.create(partially=1)
             if property_status=='Unfurnished':
                 furn_obj=Furnish.objects.create(unfurnished=1)
-
-                new_property=Property.objects.create(name=str(property_type) +str(" - ")++ str(property_status) ,location=loaction,status=1,budget=price,furnish=furn_obj)
-                print new_property.id
+            new_property=Property.objects.create(name=str(property_type) +str(" - ")+ str(property_status),created_at=timezone.now() ,location=loaction,status=1,budget=price,furnish=furn_obj,preference=pref_obj,lat=lat,lng=lng,owner_id=1)
+            print new_property.id
         except Exception as rr:
                 print (rr)
 
-        # return HttpResponseRedirect("/owner/owner_property")
+        return HttpResponseRedirect("/owner/owner_property")
 
 	

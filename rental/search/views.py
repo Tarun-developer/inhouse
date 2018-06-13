@@ -80,7 +80,7 @@ class SearchResults(TemplateView):
         lat=result_add_query['results'][0]['geometry']['location']['lat']
         lng=result_add_query['results'][0]['geometry']['location']['lng']
         cursor = connection.cursor()
-        query='SELECT id,( 6371 * acos(cos(radians('+str(lat)+'))* cos(radians(lat)) * cos(radians(lng) - radians('+str(lng)+')) + sin(radians('+str(lat)+')) * sin(radians(lat )))) AS distance_KM ,location,name FROM search_property HAVING distance_KM > 1 ORDER BY distance_KM LIMIT 0, 20'
+        query='SELECT id,( 6371 * acos(cos(radians('+str(lat)+'))* cos(radians(lat)) * cos(radians(lng) - radians('+str(lng)+')) + sin(radians('+str(lat)+')) * sin(radians(lat )))) AS distance_KM ,location,name FROM search_property HAVING distance_KM > 0 ORDER BY distance_KM LIMIT 0, 20'
         # print query
         # cursor.execute('''SELECT id,( 6371 * acos(cos(radians(lat)) * cos(radians(lat)) * cos(radians(lng) - radians(77.5612252)) + sin(radians(28.4581258)) * sin(radians(lat )))) AS distance_KM FROM search_property HAVING distance_KM > 50 ORDER BY distance_KM LIMIT 0, 20;''')
         # result_set = dictfetchall(cursor)

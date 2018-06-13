@@ -30,14 +30,30 @@ class BHK(models.Model):
 	name=models.CharField(max_length=500,null=True,blank=True)
 	def __str__(self):
 		return str(self.id)
+class Preference(models.Model):
+	family = models.IntegerField(blank=True,null=True,default=0)
+	girls= models.IntegerField(blank=True,null=True,default=0)
+	bachelor= models.IntegerField(blank=True,null=True,default=0)
+	def __str__(self):
+		return str(self.id)
 
 class Images(models.Model):
 	name=models.CharField(max_length=500,null=True,blank=True)
 	def __str__(self):
 		return str(self.name)
+		
+class OwnerInfo(models.Model):
+	name = models.CharField(max_length = 100)
+	owner_password = models.CharField(max_length = 200)
+	owner_mobile = models.CharField(max_length = 10)
+	email = models.CharField(max_length = 100)
+	# propertie=models.ForeignKey(Property,on_delete=models.CASCADE,blank=True,null=True)
 
+	def __str__(self):
+		return str(self.owner_mobile)
 class Property(models.Model):
 	name=models.CharField(max_length=500)
+	owner = models.ForeignKey(OwnerInfo,on_delete=models.CASCADE)
 	location = models.CharField(max_length=1000)	
 	status = models.IntegerField(blank=True,null=True,default=1)
 	created_at = models.DateField(blank=True,null=True)
@@ -45,7 +61,7 @@ class Property(models.Model):
 	apartment=models.ForeignKey(Apartment,on_delete=models.CASCADE,blank=True,null=True)
 	furnish=models.ForeignKey(Furnish,on_delete=models.CASCADE,blank=True,null=True)
 	bhk=models.ForeignKey(BHK,on_delete=models.CASCADE,blank=True,null=True)
-	family_preferrable=models.IntegerField(blank=True,null=True)
+	preference=models.ForeignKey(Preference,on_delete=models.CASCADE,blank=True,null=True)
 	image=models.ForeignKey(Images,on_delete=models.CASCADE,blank=True,null=True)
 	lat=models.FloatField(blank=True,null=True)
 	lng=models.FloatField(blank=True,null=True)
@@ -57,15 +73,7 @@ class Property(models.Model):
 
 
 
-class OwnerInfo(models.Model):
-	name = models.CharField(max_length = 100)
-	owner_password = models.CharField(max_length = 200)
-	owner_mobile = models.CharField(max_length = 10)
-	email = models.CharField(max_length = 100)
-	propertie=models.ForeignKey(Property,on_delete=models.CASCADE,blank=True,null=True)
 
-	def __str__(self):
-		return str(self.owner_mobile)
 
 
 
