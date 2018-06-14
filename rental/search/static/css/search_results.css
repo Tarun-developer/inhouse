@@ -71,7 +71,7 @@ img.img-thumbnail.pro_image {
 }  
 
 /*Headers*/
-h1 , h1 a, h1 a:hover{ color:#FFF;  font-family: Arial; margin:10px;}
+h1 , h1 a, h1 a:hover{  font-family: Arial; margin:10px;}
 article h1, article h1 a, article h1 a:hover, h2, h3, h4, h5, h6 { line-height: 1.1em; color:#444;font-family: 'PT Sans Narrow', Calibri, 'Myriad Pro', Tahoma, Arial; padding: 10px 0; margin:0;}
 article h1, article h1 a, h2 { font-size: 30px; letter-spacing: -1px;}
 h3 { font-size: 30px; }

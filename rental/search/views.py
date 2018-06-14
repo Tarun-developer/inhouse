@@ -80,7 +80,7 @@ class SearchResults(TemplateView):
         lat=result_add_query['results'][0]['geometry']['location']['lat']
         lng=result_add_query['results'][0]['geometry']['location']['lng']
         cursor = connection.cursor()
-        query='SELECT id,( 6371 * acos(cos(radians('+str(lat)+'))* cos(radians(lat)) * cos(radians(lng) - radians('+str(lng)+')) + sin(radians('+str(lat)+')) * sin(radians(lat )))) AS distance_KM ,location,name FROM search_property HAVING distance_KM > 0 ORDER BY distance_KM LIMIT 0, 20'
+        query='SELECT id,( 6371 * acos(cos(radians('+str(lat)+'))* cos(radians(lat)) * cos(radians(lng) - radians('+str(lng)+')) + sin(radians('+str(lat)+')) * sin(radians(lat )))) AS distance_KM ,location,name FROM search_property HAVING distance_KM >= 0 ORDER BY distance_KM '
         # print query
         # cursor.execute('''SELECT id,( 6371 * acos(cos(radians(lat)) * cos(radians(lat)) * cos(radians(lng) - radians(77.5612252)) + sin(radians(28.4581258)) * sin(radians(lat )))) AS distance_KM FROM search_property HAVING distance_KM > 50 ORDER BY distance_KM LIMIT 0, 20;''')
         # result_set = dictfetchall(cursor)
@@ -97,8 +97,13 @@ class SearchResults(TemplateView):
             json['budget']=str(i.budget)
             json['image']=str(i.image)
             json['location']=str(i.location)
+            json['owner']=str(i.owner.name)
+            json['owner_mob']=str(i.owner.owner_mobile)
+            json['furnish']=str(i.furnish_id)
+
+
             all_results.append(json)
-        # print all_results
+        print all_results
         # return HttpResponse(all_results)
            
             # p_id = (i.id)

@@ -56,6 +56,7 @@ class Property(models.Model):
 	owner = models.ForeignKey(OwnerInfo,on_delete=models.CASCADE)
 	location = models.CharField(max_length=1000)	
 	status = models.IntegerField(blank=True,null=True,default=1)
+	rating = models.IntegerField(blank=True,null=True,default=5)
 	created_at = models.DateField(blank=True,null=True)
 	budget=models.CharField(blank=True,null=True,max_length=500)
 	apartment=models.ForeignKey(Apartment,on_delete=models.CASCADE,blank=True,null=True)
