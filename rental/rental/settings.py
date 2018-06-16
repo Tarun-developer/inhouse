@@ -87,7 +87,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'rental',
-        'USER': 'root',
+        'USER': 'admin',
         'PASSWORD': 'M4ster@809',
         'HOST': 'localhost',
         'PORT': '',
@@ -145,7 +145,8 @@ EMAIL_USE_TLS = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
-
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 STATIC_URL = '/static/'
 STATICFILE_DIR=(os.path.join(BASE_DIR, 'static/'))
 MEDIA_URL = '/media/'

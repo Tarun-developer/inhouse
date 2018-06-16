@@ -4,7 +4,7 @@ from datetime import datetime
 from datetime import timedelta
 from django.conf import settings
 from django.contrib import messages
-from django.contrib.gis.geoip2 import GeoIP2
+# from django.contrib.gis.geoip2 import GeoIP2
 from django.db.models import Q
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
@@ -45,18 +45,18 @@ class HomePage(TemplateView):
     def get_context_data(self, * args, ** kwargs):
         context = super(HomePage, self).get_context_data()
         self.request.environ['REMOTE_ADDR']
-        if  self.request.environ['REMOTE_ADDR'] == '127.0.0.1':
-            context['ip'] = '27.255.211.216'
-        else:
-            context['ip'] = self.request.environ['REMOTE_ADDR']
-        g = GeoIP2()
-        location_data = g.city(context['ip'])
-        # city = g.city('106.192.73.120')
-        context['city'] = location_data['city']
-        context['country'] = location_data['country_name']
+        # if  self.request.environ['REMOTE_ADDR'] == '127.0.0.1':
+        #     context['ip'] = '27.255.211.216'
+        # else:
+        #     context['ip'] = self.request.environ['REMOTE_ADDR']
+        # g = GeoIP2()
+        # location_data = g.city(context['ip'])
+        # # city = g.city('106.192.73.120')
+        # context['city'] = location_data['city']
+        # context['country'] = location_data['country_name']
 
 
-        return context
+        # return context
 	
     # 
 
