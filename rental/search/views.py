@@ -4,8 +4,7 @@ from datetime import datetime
 from datetime import timedelta
 from django.conf import settings
 from django.contrib import messages
-from django.contrib.gis import geoip
-from django.contrib.gis.geoip import GeoIP
+from django.contrib.gis.geoip2 import GeoIP2
 from django.db.models import Q
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
@@ -18,7 +17,7 @@ from django.utils.decorators import method_decorator
 from django.views.generic import TemplateView
 import json,pprint
 from django.views.decorators.csrf import csrf_exempt
-from models import *
+from . import models
 from passlib.hash import django_pbkdf2_sha256 as handler
 import pytz
 from random import randint
@@ -50,7 +49,7 @@ class HomePage(TemplateView):
             context['ip'] = '27.255.211.216'
         else:
             context['ip'] = self.request.environ['REMOTE_ADDR']
-        g = GeoIP()
+        g = GeoIP2()
         location_data = g.city(context['ip'])
         # city = g.city('106.192.73.120')
         context['city'] = location_data['city']
@@ -103,7 +102,6 @@ class SearchResults(TemplateView):
 
 
             all_results.append(json)
-        print all_results
         # return HttpResponse(all_results)
            
             # p_id = (i.id)

@@ -60,7 +60,6 @@ class OwnerRegister(TemplateView):
                 
                 if bool_pass:
                     user = authenticate(owner_mobile=mobile, owner_password=password)
-                    print user
                     if user is not None:
                         if user.is_active:
                             request.session.set_expiry(86400) #sets the exp. value of the session
@@ -71,9 +70,8 @@ class OwnerRegister(TemplateView):
                     messages.info(request,'invalid password. please try again')
                     return HttpResponseRedirect("/owner/owner_register")
             except Exception as r:
-                print r
-                messages.info(request,'invalid password. please try again')
-                return HttpResponseRedirect("/owner/owner_register")
+                  messages.info(request,'invalid password. please try again')
+                  return HttpResponseRedirect("/owner/owner_register")
         else:
             try:
                 owner_obj = OwnerInfo.objects.get(owner_mobile=mobile)
@@ -86,7 +84,6 @@ class OwnerRegister(TemplateView):
                 hashed_pwd = make_password(password)
                 owner_register = OwnerInfo(email=email, owner_mobile=mobile,owner_password=hashed_pwd)
                 owner_register.save()
-                print owner_register.id
                 return HttpResponseRedirect("/owner/owner_add_property/?own=" + str(owner_register.id))
                 print (r)
 
@@ -108,7 +105,6 @@ class OwnerAddProperty(TemplateView):
             price = request.POST.get('price')
             city = request.POST.get('city')
             family = request.POST.getlist('checks[]')
-            print family
             # if family[0]==1:
             #     pref_obj=Preference.objects.create(family=1,girls=1,bachelor=1)
             # if family[0]==2:
@@ -127,7 +123,6 @@ class OwnerAddProperty(TemplateView):
             if property_status=='Unfurnished':
                 furn_obj=Furnish.objects.create(unfurnished=1)
             new_property=Property.objects.create(name=str(property_type) +str(" - ")+ str(property_status),created_at=timezone.now() ,location=loaction,status=1,budget=price,furnish=furn_obj,preference=pref_obj,lat=lat,lng=lng,owner_id=1)
-            print new_property.id
         except Exception as rr:
                 print (rr)
 
